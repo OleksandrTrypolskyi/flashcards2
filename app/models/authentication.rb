@@ -1,4 +1,5 @@
-class Authentication < ActiveRecord::Base
+# File for Authentication class
+class Authentication < ApplicationRecord
   belongs_to :user
   validates :user_id, :provider, :uid, presence: true
 end

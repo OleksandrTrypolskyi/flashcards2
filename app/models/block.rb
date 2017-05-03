@@ -1,4 +1,5 @@
-class Block < ActiveRecord::Base
+# File for Block class
+class Block < ApplicationRecord
   has_many :cards, dependent: :destroy
   belongs_to :user
 

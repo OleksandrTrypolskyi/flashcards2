@@ -1,6 +1,6 @@
 require 'super_memo'
-
-class Card < ActiveRecord::Base
+# File for Card class
+class Card < ApplicationRecord
   belongs_to :user
   belongs_to :block
   validates :user_id, presence: true
@@ -15,8 +15,8 @@ class Card < ActiveRecord::Base
 
   mount_uploader :image, CardImageUploader
 
-  scope :pending, -> { where('review_date <= ?', Time.now).order('RANDOM()') }
-  scope :repeating, -> { where('quality < ?', 4).order('RANDOM()') }
+  scope :pending, (-> { where('review_date <= ?', Time.now).order('RANDOM()') })
+  scope :repeating, (-> { where('quality < ?', 4).order('RANDOM()') })
 
   def check_translation(user_translation)
     distance = Levenshtein.distance(full_downcase(translated_text),
@@ -25,11 +25,12 @@ class Card < ActiveRecord::Base
     sm_hash = SuperMemo.algorithm(interval, repeat, efactor, attempt, distance, 1)
 
     if distance <= 1
-      sm_hash.merge!({ review_date: Time.now + interval.to_i.days, attempt: 1 })
+      sm_hash[:review_date] = Time.now + interval.to_i.days
+      sm_hash[:attempt] = 1
       update(sm_hash)
       { state: true, distance: distance }
     else
-      sm_hash.merge!({ attempt: [attempt + 1, 5].min })
+      sm_hash[:attempt] = [attempt + 1, 5].min
       update(sm_hash)
       { state: false, distance: distance }
     end
@@ -51,9 +52,8 @@ class Card < ActiveRecord::Base
   end
 
   def texts_are_not_equal
-    if full_downcase(original_text) == full_downcase(translated_text)
-      errors.add(:original_text, 'Вводимые значения должны отличаться.')
-    end
+    return unless full_downcase(original_text) == full_downcase(translated_text)
+    errors.add(:original_text, 'Вводимые значения должны отличаться.')
   end
 
   def full_downcase(str)

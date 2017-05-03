@@ -1,0 +1,19 @@
+ruby:
+  config_file: .rubocop.yml
+coffeescript:
+  enabled: true
+
+jshint:
+  enabled: true
+
+scss:
+  enabled: true
+  
+haml:
+  enabled: false
+
+go:
+  enabled: false
+
+swift:
+  enabled: false

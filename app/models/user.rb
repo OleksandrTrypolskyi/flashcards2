@@ -1,4 +1,5 @@
-class User < ActiveRecord::Base
+# File for User class
+class User < ApplicationRecord
   has_many :cards, dependent: :destroy
   has_many :blocks, dependent: :destroy
   has_many :authentications, dependent: :destroy
