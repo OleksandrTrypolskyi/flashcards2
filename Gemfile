@@ -27,7 +27,7 @@ gem 'levenshtein'
 gem 'mini_magick'
 gem 'newrelic_rpm'
 gem 'nokogiri'
-gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
+gem 'passenger', '>= 5.0.25', require: 'phusion_passenger/rack_handler'
 gem 'rails_12factor', group: :production
 gem 'rake'
 gem 'rollbar'

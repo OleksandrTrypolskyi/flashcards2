@@ -90,7 +90,7 @@ Style/BarePercentLiterals:
 Style/BlockComments:
   Description: 'Do not use block comments.'
   StyleGuide: '#no-block-comments'
-  Enabled: true
+  Enabled: false
 
 Style/BlockEndNewline:
   Description: 'Put end statement of multiline block on its own line.'
@@ -463,7 +463,7 @@ Style/MethodDefParentheses:
 Style/MethodName:
   Description: 'Use the configured style when naming methods.'
   StyleGuide: '#snake-case-symbols-methods-vars'
-  Enabled: true
+  Enabled: false
 
 Style/MethodMissing:
   Description: 'Avoid using `method_missing`.'
@@ -1027,7 +1027,7 @@ Metrics/AbcSize:
                  A calculated magnitude based on number of assignments,
                  branches, and conditions.
   Reference: 'http://c2.com/cgi/wiki?AbcMetric'
-  Enabled: true
+  Enabled: false
 
 Metrics/BlockNesting:
   Description: 'Avoid excessive block nesting'
@@ -1065,13 +1065,13 @@ Metrics/BlockLength:
 Metrics/ParameterLists:
   Description: 'Avoid parameter lists longer than three or four parameters.'
   StyleGuide: '#too-many-params'
-  Enabled: true
+  Enabled: false
 
 Metrics/PerceivedComplexity:
   Description: >-
                  A complexity metric geared towards measuring complexity for a
                  human reader.
-  Enabled: true
+  Enabled: false
 
 #################### Lint ##################################
 ### Warnings
@@ -1081,7 +1081,7 @@ Lint/AmbiguousBlockAssociation:
                  Checks for ambiguous block association with method when param passed without
                  parentheses.
   StyleGuide: '#syntax'
-  Enabled: true
+  Enabled: false
 
 Lint/AmbiguousOperator:
   Description: >-
@@ -1099,7 +1099,7 @@ Lint/AmbiguousRegexpLiteral:
 Lint/AssignmentInCondition:
   Description: "Don't use assignment in conditions."
   StyleGuide: '#safe-assignment-in-condition'
-  Enabled: true
+  Enabled: false
 
 Lint/BlockAlignment:
   Description: 'Align block ends correctly.'
