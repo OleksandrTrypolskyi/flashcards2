@@ -1,3 +1,4 @@
+# File for CardsMailer class
 class CardsMailer < ActionMailer::Base
   default from: ENV['DEFAULT_EMAIL_FROM_CARDS']
 

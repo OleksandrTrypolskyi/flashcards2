@@ -1,3 +1,4 @@
+# File for Dashboard::UsersController class
 class Dashboard::UsersController < Dashboard::BaseController
   def destroy
     current_user.destroy

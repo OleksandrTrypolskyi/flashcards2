@@ -1,3 +1,4 @@
+# File for Home::OauthsController class
 class Home::OauthsController < Home::BaseController
   # sends the user on a trip to the provider,
   # and after authorizing there back to the callback url.
@@ -16,10 +17,10 @@ class Home::OauthsController < Home::BaseController
         reset_session
         auto_login(@user)
         redirect_to trainer_path, notice: (t 'log_in_is_successful_provider_notice',
-                                          provider: provider.titleize)
+                                           provider: provider.titleize)
       rescue
         redirect_to user_sessions_path, alert: (t 'log_out_failed_provider_alert',
-                                         provider: provider.titleize)
+                                                provider: provider.titleize)
       end
     end
   end

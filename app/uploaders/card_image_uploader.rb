@@ -1,3 +1,4 @@
+# File for CardImageUploader class
 class CardImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
@@ -11,7 +12,7 @@ class CardImageUploader < CarrierWave::Uploader::Base
   process convert: 'jpg'
 
   def extension_white_list
-    %w(jpg jpeg gif png)
+    %w[jpg jpeg gif png]
   end
 
   def filename

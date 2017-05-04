@@ -1,3 +1,4 @@
+# File for Home::UserSessionsController class
 class Home::UserSessionsController < Home::BaseController
   def new
     if current_user

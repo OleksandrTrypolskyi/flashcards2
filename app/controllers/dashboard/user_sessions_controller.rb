@@ -1,3 +1,4 @@
+# File for Dashboard::UserSessionsController class
 class Dashboard::UserSessionsController < Dashboard::BaseController
   def destroy
     logout
