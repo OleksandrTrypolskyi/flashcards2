@@ -37,6 +37,8 @@ gem 'seedbank'
 gem 'simple_form'
 gem 'sorcery'
 gem 'whenever', require: false
+gem 'execjs'
+gem 'therubyracer'
 
 group :development, :test do
   gem 'capybara'
