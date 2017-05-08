@@ -19,6 +19,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'byebug'
 gem 'carrierwave'
+gem 'execjs'
 gem 'faraday'
 gem 'figaro'
 gem 'fog-aws'
@@ -36,9 +37,8 @@ gem 'rubocop', require: false
 gem 'seedbank'
 gem 'simple_form'
 gem 'sorcery'
-gem 'whenever', require: false
-gem 'execjs'
 gem 'therubyracer'
+gem 'whenever', require: false
 
 group :development, :test do
   gem 'capybara'
