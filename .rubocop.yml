@@ -4,6 +4,8 @@ AllCops:
   Exclude:
     - config/**/*
     - db/**/*
+    - cookbooks/**/*
+    - tmp/**/*
 
 Metrics/LineLength:
   Enable: false
