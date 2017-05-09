@@ -1,10 +1,12 @@
 # File for User class
 class User < ApplicationRecord
+  rolify
   has_many :cards, dependent: :destroy
   has_many :blocks, dependent: :destroy
   has_many :authentications, dependent: :destroy
   belongs_to :current_block, class_name: 'Block'
   before_create :set_default_locale
+  before_create :assign_default_role
   before_validation :set_default_locale, on: :create
 
   accepts_nested_attributes_for :authentications
@@ -32,6 +34,10 @@ class User < ApplicationRecord
 
   def reset_current_block
     update_attribute(:current_block_id, nil)
+  end
+
+  def assign_default_role
+    add_role(:user) if roles.blank?
   end
 
   private

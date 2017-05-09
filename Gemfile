@@ -29,8 +29,10 @@ gem 'mini_magick'
 gem 'newrelic_rpm'
 gem 'nokogiri'
 gem 'passenger', '>= 5.0.25', require: 'phusion_passenger/rack_handler'
+gem 'pundit'
 gem 'rails_12factor', group: :production
 gem 'rake'
+gem 'rolify'
 gem 'rollbar'
 gem 'routing-filter'
 gem 'rubocop', require: false
