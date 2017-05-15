@@ -19,9 +19,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'byebug'
 gem 'carrierwave'
+gem 'dotenv-rails'
 gem 'execjs'
 gem 'faraday'
 gem 'figaro'
+gem 'flickraw'
 gem 'fog-aws'
 gem 'http_accept_language'
 gem 'levenshtein'
@@ -40,6 +42,7 @@ gem 'seedbank'
 gem 'simple_form'
 gem 'sorcery'
 gem 'therubyracer'
+gem 'webmock'
 gem 'whenever', require: false
 
 group :development, :test do
